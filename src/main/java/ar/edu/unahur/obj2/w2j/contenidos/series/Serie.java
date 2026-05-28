@@ -17,17 +17,17 @@ public class Serie extends Contenido {
         return temporadas;
     }
 
-    // @Override
-    // public Double getCosto() {
-    //     return costo + temporadas.stream().mapToDouble(t -> t.costoPromedio()).average().orElse(0.0);
-    // }
-
     @Override
     public Double getCosto() {
-        Integer cantEpisodios = temporadas.stream().mapToInt(t -> t.cantidadEpisodios()).sum();
-        Double costoTotal = temporadas.stream().mapToDouble(t -> t.costoTotal()).sum();
-        return costo + (costoTotal / cantEpisodios);
+        return costoBase + temporadas.stream().mapToDouble(t -> t.costoPromedio()).average().orElse(0.0);
     }
+
+    // @Override
+    // public Double getCosto() {
+    //     Integer cantEpisodios = temporadas.stream().mapToInt(t -> t.cantidadEpisodios()).sum();
+    //     Double costoTotal = temporadas.stream().mapToDouble(t -> t.costoTotal()).sum();
+    //     return costoBase + (costoTotal / cantEpisodios);
+    // }
 
 
 

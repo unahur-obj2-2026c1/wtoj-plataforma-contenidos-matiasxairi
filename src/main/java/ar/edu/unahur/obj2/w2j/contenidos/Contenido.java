@@ -3,10 +3,10 @@ package ar.edu.unahur.obj2.w2j.contenidos;
 public abstract class Contenido{
 
     private String titulo;
-    protected Double costo;
+    protected Double costoBase;
 
-    public Contenido(Double costo, String titulo) {
-        this.costo = costo;
+    public Contenido(Double costoBase, String titulo) {
+        this.costoBase = costoBase;
         this.titulo = titulo;
     }
     
@@ -14,9 +14,10 @@ public abstract class Contenido{
         return titulo;
     }
 
-    public Double getCosto() {
-        return costo;
+    public Double getCostoBase() {
+        return costoBase;
     }
 
+    public abstract  Double getCosto() ;
 
 }

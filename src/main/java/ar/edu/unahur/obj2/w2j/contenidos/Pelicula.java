@@ -1,9 +1,13 @@
 package ar.edu.unahur.obj2.w2j.contenidos;
 
 public class Pelicula extends Contenido {
-    public Pelicula(Double costo, String titulo) {
-        super(costo, titulo);
-    }
- 
 
+    public Pelicula(Double costoBase, String titulo) {
+        super(costoBase, titulo);
+    }
+
+    @Override
+    public Double getCosto() {
+        return getCostoBase();
+    }
 }
